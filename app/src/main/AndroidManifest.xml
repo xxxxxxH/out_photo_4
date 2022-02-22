@@ -4,24 +4,31 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
     <application
-        android:name="com.abc.app.MyApplication"
+        android:name=".app.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.Photo_4">
-        <activity android:name=".SplashAc">
+        android:theme="@style/Theme.Photo_4"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.ShatterActivity"></activity>
+        <activity android:name=".ui.PixelActivity" />
+        <activity android:name=".ui.PipActivity" />
+        <activity android:name=".ui.ColorActivity" />
+        <activity android:name=".ui.BokehActivity" />
+        <activity android:name=".ui.EditorActivity" />
+        <activity android:name=".ui.SplashAc">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.MainActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
