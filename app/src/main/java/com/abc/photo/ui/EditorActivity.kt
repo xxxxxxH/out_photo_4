@@ -1,12 +1,14 @@
 package com.abc.photo.ui
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.abc.photo.R
 import com.abc.photo.ui.bokeh.BokehActivity
+import com.abc.photo.utils.CommonUtils
 import com.abc.photo.utils.GlideLoader
 import com.lcw.library.imagepicker.ImagePicker
 
@@ -47,6 +49,7 @@ class EditorActivity : AppCompatActivity() {
                     (it.getStringArrayListExtra(ImagePicker.EXTRA_SELECT_IMAGES) as ArrayList<String>)[0]
                 if (TextUtils.isEmpty(url))
                     return@let
+//                CommonUtils.bitmap = BitmapFactory.decodeFile(url)
                 when (requestCode) {
                     1 -> {
                         startNextActivity(BokehActivity::class.java, url)

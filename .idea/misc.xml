@@ -6,10 +6,12 @@
         <entry key="..\:/outSource/out_photo_5/app/src/main/res/drawable/radio_selector.xml" value="0.2485" />
         <entry key="..\:/outSource/out_photo_5/app/src/main/res/layout/activity_bokeh.xml" value="0.20425724637681159" />
         <entry key="..\:/outSource/out_photo_5/app/src/main/res/layout/layout_item_bokeh.xml" value="0.20425724637681159" />
+        <entry key="..\:/workspace/out_photo_4/app/src/main/res/layout/activity_bokeh.xml" value="0.358695652173913" />
+        <entry key="..\:/workspace/out_photo_4/app/src/main/res/layout/layout_item_bokeh.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
