@@ -1,22 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.BokehActivity">
+    tools:context=".ui.bokeh.BokehActivity">
 
-    <me.panpf.sketch.SketchImageView
+    <RelativeLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="3"
-        android:layout_height="0dp"/>
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:visibility="visible" />
+
+        <com.abc.photo.widget.StickerView
+            android:id="@+id/stickerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+
+        <com.edg.stickerlibrary.view.CustomImageView
+            android:id="@+id/img_effect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:alpha="0.7"
+            android:visibility="visible" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3" />
+        <RadioGroup
+            android:id="@+id/rgBokeh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbBokeh"
+                style="@style/radiobutton"
+                android:layout_weight="1"
+                android:text="bokeh"
+                android:textAllCaps="true"
+                android:width="0dp" />
+
+            <RadioButton
+                android:id="@+id/rbEffect"
+                style="@style/radiobutton"
+                android:layout_weight="1"
+                android:text="effect"
+                android:textAllCaps="true"
+                android:width="0dp" />
+
+
+            <RadioButton
+                android:id="@+id/rbSticker"
+                style="@style/radiobutton"
+                android:layout_weight="1"
+                android:text="sticker"
+                android:textAllCaps="true"
+                android:width="0dp" />
+
+            <RadioButton
+                android:id="@+id/rbDone"
+                style="@style/radiobutton"
+                android:layout_weight="1"
+                android:text="done"
+                android:textAllCaps="true"
+                android:width="0dp" />
+        </RadioGroup>
 
     </LinearLayout>
 </LinearLayout>

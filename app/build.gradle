@@ -49,4 +49,7 @@ dependencies {
     implementation 'com.lcw.library:imagepicker:2.2.7'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation("io.github.panpf.sketch:sketch:2.7.1")
+    implementation 'uk.co.ribot:easyadapter:1.5.0@aar'
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation 'com.github.open-android:RoundedImageView:v1.0.0'
 }

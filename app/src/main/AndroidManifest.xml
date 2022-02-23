@@ -19,7 +19,7 @@
         <activity android:name=".ui.PixelActivity" />
         <activity android:name=".ui.PipActivity" />
         <activity android:name=".ui.ColorActivity" />
-        <activity android:name=".ui.BokehActivity" />
+        <activity android:name=".ui.bokeh.BokehActivity" />
         <activity android:name=".ui.EditorActivity" />
         <activity android:name=".ui.SplashAc">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.abc.widget;
+package com.abc.photo.widget;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

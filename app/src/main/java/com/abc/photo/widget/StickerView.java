@@ -1,4 +1,4 @@
-package com.abc.widget;
+package com.abc.photo.widget;
 
 import android.content.Context;
 import android.graphics.Bitmap;
