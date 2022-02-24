@@ -11,4 +11,10 @@
     <color name="hint_foreground_material_light">#FF000000</color>
     <color name="colorAccent">#E91E63</color>
     <color name="yellowcolor">#F7C600</color>
+    <color name="seekprogress_color">#F7C600</color>
+    <color name="seekindicator_color">#016080</color>
+    <color name="seekthumb_color">#F7C600</color>
+    <color name="seektick_texts_color">#FFFFFF</color>
+    <color name="greycolor">#828282</color>
+    <color name="backgrndcolor">#E7E4E4</color>
 </resources>

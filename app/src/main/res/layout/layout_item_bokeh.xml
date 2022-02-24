@@ -14,5 +14,7 @@
         android:layout_centerInParent="true"
         android:scaleType="centerCrop"
         app:riv_corner_radius="10dip"
+        app:riv_border_color="@color/bg_black"
+        app:riv_border_width="1dp"
         app:riv_oval="true" />
 </RelativeLayout>

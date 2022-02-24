@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <jahirfiquitiva.libs.fabsmenu.FABsMenuLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        fab:fabs_menu_clickableOverlay="true"
+        fab:fabs_menu_overlayColor="#4d000000"
+        tools:layout_behavior="@string/fabs_menu_layout_behavior">
+
+        <jahirfiquitiva.libs.fabsmenu.FABsMenu
+            android:id="@+id/fabs_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:clipChildren="false"
+            fab:fab_expandDirection="up"
+            fab:fab_labelsPosition="left"
+            fab:fab_menuMargins="16dp"
+            fab:fab_moreButtonPlusIcon="@mipmap/ic_launcher"
+            fab:fab_moreButtonBackgroundColor="@color/yellowcolor"
+            fab:fab_moreButtonRippleColor="#4d000000"
+            fab:fab_moreButtonSize="normal">
+
+            <!-- This is the item that appears at the top of the menu -->
+            <jahirfiquitiva.libs.fabsmenu.TitleFAB
+                android:id="@+id/to_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:backgroundTint="@color/colorAccent"
+                fab:fabSize="mini"
+                fab:fab_title="This is a custom title"
+                fab:fab_title_backgroundColor="@color/colorAccent"
+                fab:fab_title_textColor="@android:color/white"
+                fab:rippleColor="@color/colorAccent"
+                fab:srcCompat="@mipmap/fb" />
+
+            <jahirfiquitiva.libs.fabsmenu.TitleFAB
+                android:id="@+id/clickable_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:backgroundTint="@color/colorAccent"
+                fab:fabSize="mini"
+                fab:fab_enableTitleClick="true"
+                fab:fab_title="Clickable title"
+                fab:fab_title_textColor="@color/colorAccent"
+                fab:rippleColor="@color/colorAccent"
+                fab:srcCompat="@mipmap/insta" />
+
+            <jahirfiquitiva.libs.fabsmenu.TitleFAB
+                android:id="@+id/mini_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fabSize="mini"
+                fab:fab_title="Mini fab with long text"
+                fab:srcCompat="@mipmap/gmail" />
+
+            <!-- This item will appear just above the menu FAB -->
+            <jahirfiquitiva.libs.fabsmenu.TitleFAB
+                android:id="@+id/green_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fabSize="mini"
+                fab:fab_title="Fab with even longer text that might not even fit in all the screens"
+                fab:srcCompat="@mipmap/wp" />
+
+        </jahirfiquitiva.libs.fabsmenu.FABsMenu>
+    </jahirfiquitiva.libs.fabsmenu.FABsMenuLayout>
+</RelativeLayout>
