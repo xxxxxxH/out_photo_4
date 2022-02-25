@@ -25,19 +25,7 @@
         <com.abc.photo.widget.StickerView
             android:id="@+id/stickerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:visibility="visible" />
-
-        <com.edg.stickerlibrary.view.CustomImageView
-            android:id="@+id/img_effect"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:alpha="0.7"
-            android:visibility="visible" />
+            android:layout_height="match_parent"/>
 
     </RelativeLayout>
 

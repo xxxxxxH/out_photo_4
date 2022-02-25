@@ -4,34 +4,33 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abc.photo.R
 import com.abc.photo.item.BokehItem
+import com.abc.photo.item.EffectItem
 import com.abc.photo.item.StickerItem
 import com.abc.photo.ui.PictureAct
 import com.abc.photo.utils.CommonUtils
 import com.abc.photo.utils.GUPUtil
 import com.abc.photo.utils.MessageEvent
-import com.abc.photo.utils.ScreenUtils
-import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeInfoDialog
+import com.abc.photo.utils.StickerModel
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeProgressDialog
 import com.sdsmdg.tastytoast.TastyToast
 import jp.co.cyberagent.android.gpuimage.GPUImage
 import kotlinx.android.synthetic.main.activity_bokeh.*
+import net.widget.DrawableSticker
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import uk.co.ribot.easyadapter.EasyRecyclerAdapter
 import kotlin.concurrent.thread
+
 
 class BokehActivity : AppCompatActivity() {
 
@@ -40,7 +39,7 @@ class BokehActivity : AppCompatActivity() {
     private var bokehAdapter: EasyRecyclerAdapter<Bitmap>? = null
     private var stickerAdapter: EasyRecyclerAdapter<Bitmap>? = null
     private var effectAdapter: EasyRecyclerAdapter<Bitmap>? = null
-    private var progressDialog:AwesomeProgressDialog?=null
+    private var progressDialog: AwesomeProgressDialog? = null
 
     private val handler: Handler = @SuppressLint("HandlerLeak")
     object : Handler() {
@@ -105,7 +104,7 @@ class BokehActivity : AppCompatActivity() {
         }
     }
 
-    private fun initAdapter(){
+    private fun initAdapter() {
         bokehAdapter = EasyRecyclerAdapter<Bitmap>(this, BokehItem::class.java, ArrayList<Bitmap>())
         recyclerBokeh.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
@@ -118,7 +117,7 @@ class BokehActivity : AppCompatActivity() {
         recyclerSticker.adapter = stickerAdapter
 
         effectAdapter =
-            EasyRecyclerAdapter<Bitmap>(this, BokehItem::class.java, ArrayList<Bitmap>())
+            EasyRecyclerAdapter<Bitmap>(this, EffectItem::class.java, ArrayList<Bitmap>())
         recyclerEffect.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyclerEffect.adapter = effectAdapter
@@ -162,41 +161,30 @@ class BokehActivity : AppCompatActivity() {
         val msg = e.getMessage()
         when (msg[0]) {
             "bokehItem" -> {
-                val iv = ImageView(this)
-                val p = RelativeLayout.LayoutParams(
-                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT
-                )
-                p.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE)
-                iv.layoutParams = p
-                iv.setImageBitmap(msg[1] as Bitmap)
-                main.addView(iv)
-                main.invalidate()
+                val bitmapDrawable = BitmapDrawable(msg[1] as Bitmap)
+                val stickerModel = StickerModel(bitmapDrawable)
+                val sticker = DrawableSticker(stickerModel.drawable)
+                stickerView.addSticker(sticker)
             }
             "effectItem" -> {
-                img_main.invalidate()
                 img_main.setImageBitmap(msg[1] as Bitmap)
+                img_main.invalidate()
             }
             "stickerItem" -> {
-                val iv = ImageView(this)
-                val p = RelativeLayout.LayoutParams(
-                    ScreenUtils.get().getScreenSize(this)[1] / 2,
-                    ScreenUtils.get().getScreenSize(this)[1] / 2
-                )
-                p.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE)
-                iv.layoutParams = p
-                iv.setImageBitmap(msg[1] as Bitmap)
-                main.addView(iv)
-                main.invalidate()
+                val bitmapDrawable = BitmapDrawable(msg[1] as Bitmap)
+                val stickerModel = StickerModel(bitmapDrawable)
+                val sticker = DrawableSticker(stickerModel.drawable)
+                stickerView.addSticker(sticker)
             }
             "saveSuccess" -> {
                 progressDialog!!.hide()
-                TastyToast.makeText(this,"save success",TastyToast.LENGTH_SHORT,TastyToast.SUCCESS)
-                startActivity(Intent(this,PictureAct::class.java))
+                TastyToast.makeText(this, "save success", TastyToast.LENGTH_SHORT, TastyToast.SUCCESS)
+                startActivity(Intent(this, PictureAct::class.java))
+                finish()
             }
             "saveError" -> {
                 progressDialog!!.hide()
-                TastyToast.makeText(this,"save failed",TastyToast.LENGTH_SHORT,TastyToast.ERROR)
+                TastyToast.makeText(this, "save failed", TastyToast.LENGTH_SHORT, TastyToast.ERROR)
             }
         }
     }

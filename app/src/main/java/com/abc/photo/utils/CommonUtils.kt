@@ -16,6 +16,8 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
+import java.util.*
+import android.util.Base64;
 
 
 object CommonUtils {
@@ -106,5 +108,20 @@ object CommonUtils {
 
     fun BytesToBitmap(bis: ByteArray): Bitmap {
         return BitmapFactory.decodeByteArray(bis, 0, bis.size)
+    }
+
+    fun convertStringToIcon(st: String?): Bitmap? {
+        var bitmap: Bitmap? = null
+        return try {
+            val bitmapArray: ByteArray
+            bitmapArray = Base64.decode(st, Base64.DEFAULT)
+            bitmap = BitmapFactory.decodeByteArray(
+                bitmapArray, 0,
+                bitmapArray.size
+            )
+            bitmap
+        } catch (e: java.lang.Exception) {
+            null
+        }
     }
 }

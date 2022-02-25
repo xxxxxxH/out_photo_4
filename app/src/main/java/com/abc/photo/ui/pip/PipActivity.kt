@@ -4,13 +4,11 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abc.photo.R
@@ -21,11 +19,17 @@ import com.abc.photo.ui.PictureAct
 import com.abc.photo.utils.CommonUtils
 import com.abc.photo.utils.GUPUtil
 import com.abc.photo.utils.MessageEvent
-import com.abc.photo.utils.ScreenUtils
+import com.abc.photo.utils.StickerModel
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeProgressDialog
 import com.sdsmdg.tastytoast.TastyToast
 import jp.co.cyberagent.android.gpuimage.GPUImage
+import kotlinx.android.synthetic.main.activity_color.*
 import kotlinx.android.synthetic.main.activity_pip.*
+import kotlinx.android.synthetic.main.activity_pip.img_main
+import kotlinx.android.synthetic.main.activity_pip.main
+import kotlinx.android.synthetic.main.activity_pip.recyclerS
+import kotlinx.android.synthetic.main.activity_pip.stickerView
+import net.widget.DrawableSticker
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -156,32 +160,19 @@ class PipActivity : AppCompatActivity() {
         val msg = e.getMessage()
         when (msg[0]) {
             "pipItem" -> {
-                val iv = ImageView(this)
-                val p = RelativeLayout.LayoutParams(
-                    ScreenUtils.get().getScreenSize(this)[1] / 2,
-                    ScreenUtils.get().getScreenSize(this)[1] / 2
-                )
-                p.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE)
-                iv.layoutParams = p
-                iv.setImageBitmap(msg[1] as Bitmap)
-                main.addView(iv)
-                main.invalidate()
+                val bitmapDrawable = BitmapDrawable(msg[1] as Bitmap)
+                val stickerModel = StickerModel(bitmapDrawable)
+                val sticker = DrawableSticker(stickerModel.drawable)
+                stickerView.addSticker(sticker)
             }
             "bgItem" -> {
-                img_main.invalidate()
                 img_main.setImageBitmap(msg[1] as Bitmap)
             }
             "stickerItem" -> {
-                val iv = ImageView(this)
-                val p = RelativeLayout.LayoutParams(
-                    ScreenUtils.get().getScreenSize(this)[1] / 2,
-                    ScreenUtils.get().getScreenSize(this)[1] / 2
-                )
-                p.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE)
-                iv.layoutParams = p
-                iv.setImageBitmap(msg[1] as Bitmap)
-                main.addView(iv)
-                main.invalidate()
+                val bitmapDrawable = BitmapDrawable(msg[1] as Bitmap)
+                val stickerModel = StickerModel(bitmapDrawable)
+                val sticker = DrawableSticker(stickerModel.drawable)
+                stickerView.addSticker(sticker)
             }
             "saveSuccess" -> {
                 progressDialog!!.hide()
@@ -192,6 +183,7 @@ class PipActivity : AppCompatActivity() {
                     TastyToast.SUCCESS
                 )
                 startActivity(Intent(this, PictureAct::class.java))
+                finish()
             }
             "saveError" -> {
                 progressDialog!!.hide()

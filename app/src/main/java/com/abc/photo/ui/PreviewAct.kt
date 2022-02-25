@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.abc.photo.R
 import com.abc.photo.utils.ShareUtils
+import com.bumptech.glide.Glide
 import com.tencent.mmkv.MMKV
 import kotlinx.android.synthetic.main.activity_preview.*
 import kotlinx.android.synthetic.main.layout_float.*
