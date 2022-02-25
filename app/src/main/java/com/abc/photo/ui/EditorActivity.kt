@@ -25,7 +25,7 @@ class EditorActivity : AppCompatActivity() {
         selectImage(desc)
     }
 
-    fun selectImage(code: Int) {
+    private fun selectImage(code: Int) {
         ImagePicker.getInstance()
             .setTitle("select")
             .showCamera(true)

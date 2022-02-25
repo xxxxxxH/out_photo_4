@@ -1,6 +1,7 @@
 package com.abc.photo.ui.shatter
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.abc.photo.R
 import com.abc.photo.item.FrameItem
 import com.abc.photo.item.StickerItem
+import com.abc.photo.ui.PictureAct
 import com.abc.photo.utils.CommonUtils
 import com.abc.photo.utils.MessageEvent
 import com.abc.photo.utils.ScreenUtils
@@ -239,6 +241,7 @@ class ShatterActivity : AppCompatActivity() {
                     TastyToast.LENGTH_SHORT,
                     TastyToast.SUCCESS
                 )
+                startActivity(Intent(this, PictureAct::class.java))
             }
             "saveError" -> {
                 progressDialog!!.hide()

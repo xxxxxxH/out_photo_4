@@ -1,6 +1,7 @@
 package com.abc.photo.ui.pip
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -16,6 +17,7 @@ import com.abc.photo.R
 import com.abc.photo.item.BgItem
 import com.abc.photo.item.PipItem
 import com.abc.photo.item.StickerItem
+import com.abc.photo.ui.PictureAct
 import com.abc.photo.utils.CommonUtils
 import com.abc.photo.utils.GUPUtil
 import com.abc.photo.utils.MessageEvent
@@ -189,6 +191,7 @@ class PipActivity : AppCompatActivity() {
                     TastyToast.LENGTH_SHORT,
                     TastyToast.SUCCESS
                 )
+                startActivity(Intent(this, PictureAct::class.java))
             }
             "saveError" -> {
                 progressDialog!!.hide()

@@ -21,52 +21,52 @@
             fab:fab_expandDirection="up"
             fab:fab_labelsPosition="left"
             fab:fab_menuMargins="16dp"
-            fab:fab_moreButtonPlusIcon="@mipmap/ic_launcher"
+            fab:fab_moreButtonPlusIcon="@mipmap/add"
             fab:fab_moreButtonBackgroundColor="@color/yellowcolor"
             fab:fab_moreButtonRippleColor="#4d000000"
             fab:fab_moreButtonSize="normal">
 
             <!-- This is the item that appears at the top of the menu -->
             <jahirfiquitiva.libs.fabsmenu.TitleFAB
-                android:id="@+id/to_remove"
+                android:id="@+id/shareFb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:backgroundTint="@color/colorAccent"
                 fab:fabSize="mini"
-                fab:fab_title="This is a custom title"
+                fab:fab_title="Share with Facebook"
                 fab:fab_title_backgroundColor="@color/colorAccent"
                 fab:fab_title_textColor="@android:color/white"
                 fab:rippleColor="@color/colorAccent"
                 fab:srcCompat="@mipmap/fb" />
 
             <jahirfiquitiva.libs.fabsmenu.TitleFAB
-                android:id="@+id/clickable_title"
+                android:id="@+id/shareIns"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:backgroundTint="@color/colorAccent"
                 fab:fabSize="mini"
                 fab:fab_enableTitleClick="true"
-                fab:fab_title="Clickable title"
+                fab:fab_title="Share with ins"
                 fab:fab_title_textColor="@color/colorAccent"
                 fab:rippleColor="@color/colorAccent"
                 fab:srcCompat="@mipmap/insta" />
 
             <jahirfiquitiva.libs.fabsmenu.TitleFAB
-                android:id="@+id/mini_fab"
+                android:id="@+id/shareEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fabSize="mini"
-                fab:fab_title="Mini fab with long text"
+                fab:fab_title="Share with Email"
                 fab:srcCompat="@mipmap/gmail" />
 
             <!-- This item will appear just above the menu FAB -->
             <jahirfiquitiva.libs.fabsmenu.TitleFAB
-                android:id="@+id/green_fab"
+                android:id="@+id/delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fabSize="mini"
-                fab:fab_title="Fab with even longer text that might not even fit in all the screens"
-                fab:srcCompat="@mipmap/wp" />
+                fab:fab_title="Delete"
+                fab:srcCompat="@mipmap/delete" />
 
         </jahirfiquitiva.libs.fabsmenu.FABsMenu>
     </jahirfiquitiva.libs.fabsmenu.FABsMenuLayout>

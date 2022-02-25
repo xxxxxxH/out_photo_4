@@ -68,7 +68,7 @@ object CommonUtils {
             scanNotice(view.context, imgFile)
             EventBus.getDefault().post(MessageEvent("saveSuccess"))
             saveKeys("keys", fileName)
-            MMKV.defaultMMKV()!!.encode(fileName, BitmapToBytes(bitmap))
+            MMKV.defaultMMKV()!!.encode(fileName, imgFile.absolutePath)
         } catch (e: Exception) {
             e.printStackTrace()
             EventBus.getDefault().post(MessageEvent("saveError"))
@@ -78,7 +78,7 @@ object CommonUtils {
         }
     }
 
-    private fun scanNotice(context: Context, file: File) {
+     fun scanNotice(context: Context, file: File) {
         MediaScannerConnection.scanFile(
             context,
             arrayOf(file.absolutePath),

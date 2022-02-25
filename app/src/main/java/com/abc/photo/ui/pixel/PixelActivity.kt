@@ -2,6 +2,7 @@ package com.abc.photo.ui.pixel
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Bundle
@@ -17,6 +18,7 @@ import com.abc.photo.R
 import com.abc.photo.item.ColorItem
 import com.abc.photo.item.EffectItem
 import com.abc.photo.item.StickerItem
+import com.abc.photo.ui.PictureAct
 import com.abc.photo.utils.CommonUtils
 import com.abc.photo.utils.MessageEvent
 import com.abc.photo.utils.ScreenUtils
@@ -185,6 +187,7 @@ class PixelActivity : AppCompatActivity() {
                     TastyToast.LENGTH_SHORT,
                     TastyToast.SUCCESS
                 )
+                startActivity(Intent(this, PictureAct::class.java))
             }
             "saveError" -> {
                 progressDialog!!.hide()
