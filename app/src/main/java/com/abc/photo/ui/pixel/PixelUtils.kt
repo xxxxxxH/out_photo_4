@@ -1,17 +1,16 @@
-package com.abc.photo.ui.bokeh
+package com.abc.photo.ui.pixel
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 
-object  BokehUtils {
-
-    fun getBokehRes(context: Context): ArrayList<Bitmap> {
+object PixelUtils {
+    fun getPixel(context: Context):ArrayList<Bitmap>{
         val result = ArrayList<Bitmap>()
-        val imgs = context.resources.assets.list("blend")
+        val imgs = context.resources.assets.list("pixel")
         imgs?.let {
             for (item in it) {
-                val b = BitmapFactory.decodeStream(context.resources.assets.open("blend/$item"))
+                val b = BitmapFactory.decodeStream(context.resources.assets.open("pixel/$item"))
                 result.add(b)
             }
         }

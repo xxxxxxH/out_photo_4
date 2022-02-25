@@ -6,6 +6,11 @@ import android.text.TextUtils
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.abc.photo.R
+import com.abc.photo.ui.bokeh.BokehActivity
+import com.abc.photo.ui.color.ColorActivity
+import com.abc.photo.ui.pip.PipActivity
+import com.abc.photo.ui.pixel.PixelActivity
+import com.abc.photo.ui.shatter.ShatterActivity
 import com.abc.photo.utils.GlideLoader
 import com.lcw.library.imagepicker.ImagePicker
 
@@ -35,7 +40,6 @@ class EditorActivity : AppCompatActivity() {
         val i = Intent(this, clazz)
         i.putExtra("url", url)
         startActivity(i)
-        finish()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

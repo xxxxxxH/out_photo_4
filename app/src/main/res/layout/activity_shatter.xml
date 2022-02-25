@@ -1,21 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.ShatterActivity">
+    android:layout_height="match_parent">
 
-    <me.panpf.sketch.SketchImageView
+
+    <RelativeLayout
+        android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/recyclerRoot"
+        android:gravity="center">
 
-    <LinearLayout
+        <me.panpf.sketch.SketchImageView
+            android:id="@+id/img_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:visibility="visible" />
+
+        <com.edg.stickerlibrary.view.CustomImageView
+            android:id="@+id/img_effect"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:alpha="0.7"
+            android:visibility="visible" />
+
+        <com.abc.photo.widget.StickerView
+            android:id="@+id/stickerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/img_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/recyclerRoot"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rgShatter">
 
-    </LinearLayout>
-</LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
+        <include
+            android:id="@+id/tools"
+            layout="@layout/layout_tools"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/rgShatter"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbt"
+            style="@style/radiobutton"
+            android:layout_weight="1"
+            android:width="0dp"
+            android:text="tools"
+            android:textAllCaps="true" />
+
+        <RadioButton
+            android:id="@+id/rbf"
+            style="@style/radiobutton"
+            android:layout_weight="1"
+            android:width="0dp"
+            android:text="frame"
+            android:textAllCaps="true" />
+
+        <RadioButton
+            android:id="@+id/rbs"
+            style="@style/radiobutton"
+            android:layout_weight="1"
+            android:width="0dp"
+            android:text="sticker"
+            android:textAllCaps="true" />
+
+        <RadioButton
+            android:id="@+id/rbd"
+            style="@style/radiobutton"
+            android:layout_weight="1"
+            android:width="0dp"
+            android:text="done"
+            android:textAllCaps="true" />
+    </RadioGroup>
+</RelativeLayout>

@@ -15,10 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Photo_4"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.ShatterActivity"></activity>
-        <activity android:name=".ui.PixelActivity" />
-        <activity android:name=".ui.PipActivity" />
-        <activity android:name=".ui.ColorActivity" />
+        <activity
+            android:name=".ui.PictureAct"
+            android:exported="false" />
+        <activity android:name=".ui.shatter.ShatterActivity" />
+        <activity android:name=".ui.pixel.PixelActivity" />
+        <activity android:name=".ui.pip.PipActivity" />
+        <activity android:name=".ui.color.ColorActivity" />
         <activity android:name=".ui.bokeh.BokehActivity" />
         <activity android:name=".ui.EditorActivity" />
         <activity android:name=".ui.SplashAc">

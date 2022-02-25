@@ -1,3 +1,69 @@
 <resources>
     <string name="app_name">photo_4</string>
+    <string-array name="color">
+        <item>#b71c1c</item>
+        <item>#880e4f</item>
+        <item>#fb8c00</item>
+        <item>#311b92</item>
+        <item>#009688</item>
+        <item>#4a5736</item>
+        <item>#bbdb88</item>
+        <item>#382921</item>
+        <item>#66FF00</item>
+        <item>#555064</item>
+        <item>#DE3163</item>
+        <item>#2e8dfb</item>
+        <item>#013019</item>
+        <item>#ee6012</item>
+        <item>#f8f47a</item>
+        <item>#66931F</item>
+        <item>#BDB76B</item>
+        <item>#291281</item>
+        <item>#E31230</item>
+        <item>#ffc234</item>
+        <item>#66097e</item>
+        <item>#6e785e</item>
+        <item>#E32636</item>
+
+        <item>#008000</item>
+        <item>#FF00FF</item>
+        <item>#5B92E5</item>
+        <item>#000000</item>
+
+        <item>#546e7a</item>
+        <item>#111111</item>
+        <item>#ffb300</item>
+        <item>#e91e63</item>
+        <item>#9c27b0</item>
+        <item>#d81b60</item>
+        <item>#ff9800</item>
+        <item>#01579b</item>
+        <item>#33691e</item>
+        <item>#a34452</item>
+        <item>#827717</item>
+
+        <item>#0d47a1</item>
+        <item>#004d40</item>
+        <item>#4a148c</item>
+        <item>#b2497d</item>
+        <item>#1b5e20</item>
+        <item>#1a237e</item>
+        <item>#3e2723</item>
+        <item>#212121</item>
+        <item>#bf360c</item>
+
+        <item>#e65100</item>
+        <item>#039be5</item>
+        <item>#43a047</item>
+        <item>#00897b</item>
+        <item>#3f51b5</item>
+        <item>#f4511e</item>
+        <item>#6d4c41</item>
+
+        <item>#b71c1c</item>
+        <item>#880e4f</item>
+        <item>#311b92</item>
+        <item>#ff6a80</item>
+        <item>#75675E</item>
+    </string-array>
 </resources>
